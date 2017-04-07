@@ -1,52 +1,269 @@
-<!DOCTYPE html>
 <html>
 	<head>
 		<title>States</title>
   	<link rel="stylesheet" type="text/css" href="main.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	</head>
+
 	<style>
 		tr:nth-child(even){background-color: #f2f2f2}
 	</style>
-	<body>
-		<ul class= "nav">
-			<li><a href="index.html">USA Parks</a></li>
-			<li><a href="about.html">About Us</a></li>
-			<li><a class="active" href="States.html">States</a></li>
-			<li><a href="parks_model.html">Parks</a></li>
-			<li><a href="park_types.html">Park Types</a></li>
-		</ul>
-		<div style= "padding-top: 60px">
 
-		<h1 class="headtitle" style="color:#000000">States</h1>
-		<table>
-			<tr>
-				<th>State</th>
-				<th>Capital</th>
-				<th>Flag</th>
-				<th>Well-Known Park</th>
-				<th>Region</th>
-			</tr>
-			<tr>
+	<body class="states">
+
+		<!-- NAV BAR (BOOTSTRAPPED) -->
+    <nav class="navbar navbar-default" style = "margin-bottom:0px">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="index.html">USA Parks</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item active"><a class="nav-link" href="States.html">States</a></li>
+        <li class="nav-item"><a class="nav-link" href="parks_model.html">Parks</a></li>
+        <li class="nav-item"><a class="nav-link" href="park_types.html">Park Types</a></li>
+      </ul>
+    </nav>
+		<div class="transparent">
+
+		<!-- TITLE -->
+    <div class = "container">
+      <h1 class="headtitle" style="color:#000000">
+        States
+      </h1>
+    </div>
+
+		<!-- TABLE -->
+		<div class = "container">
+		<table id="table" class = "table container" style="background-color: white; table-layout: fixed">
+			<div>
+        <tr>
+          <th><button id="c1" type="button" class="btn btn-default" style = "width:100%">State</button></th>
+          <th><button id="c2" type="button" class="btn btn-default" style = "width:100%">Capital</button></th>
+          <th><button id="c3" type="button" class="btn btn-default" style = "width:100%">Flag</button></th>
+          <th><button id="c4" type="button" class="btn btn-default" style = "width:100%">Well-Known Park</button></th>
+          <th><button id="c5" type="button" class="btn btn-default" style = "width:100%">Region</button></th>
+			  </tr>
+      </div>
+
+
+			<tr id="r1">
 				<td><a href="Texas.html">Texas</a></td>
 				<td>Austin</td>
-				<td><img src="./images/texas.jpg" alt="Texas" style="max-width: 80%"></td>
+				<td><img src="./images/texas.jpg" alt="Texas" style="width: 100%"></td>
 				<td><a href="./bigbend_park.html">Big Bend National Park</a></td>
 				<td>Southwestern</td>
 			</tr>
-			<tr>
+			<tr id="r2">
 				<td><a href="California.html">California</a></td>
 				<td>Sacramento</td>
-				<td><img src="./images/california.jpg" alt="California" style="max-width: 80%""></td>
-				<td><a href="Anza-Borrego_park.html">Anza-Borrego Desert State Park</a></td>
+				<td><img src="./images/california.jpg" alt="California" style="width: 100%"></td>
+				<td><a href="./Anza-Borrego_park.html">Anza-Borrego Desert State Park</a></td>
 				<td>Western/Pacific</td>
 			</tr>
-			<tr>
+			<tr id="r3">
 				<td><a href="Florida.html">Florida<a/></td>
 				<td>Tallahassee</td>
-				<td><img src="./images/florida.jpg" alt="Florida" style="max-width: 80%""></td>
-				<td><a href="Timucuan_park.html">Timucuan Preserve</a></td>
+				<td><img src="./images/florida.jpg" alt="Florida" style="width: 100%"></td>
+				<td><a href="./Timucuan_park.html">Timucuan Preserve</a></td>
 				<td>Southeastern/Atlantic</td>
 			</tr>
+			<tr id="r4">
+				<td><a href="New York.html">New York</a></td>
+				<td>Albany</td>
+				<td><img src="./images/new_york.jpg" alt="New York" style="width: 100%"></td>
+				<td><a href="./Central_Park.html">Central Park</a></td>
+				<td>Northeastern</td>
+			</tr>
+			<tr id="r5">
+				<td><a href="Washington.html">Washington</a></td>
+				<td>Olympia</td>
+				<td><img src="./images/washington.jpg" alt="Washington" style="width: 100%"></td>
+				<td><a href="./Washington_State_park.html">Deception Pass State Park</a></td>
+				<td>Northwestern</td>
+			</tr>
+			<tr id="r6">
+				<td><a href="Wyoming.html">Wyoming</a></td>
+				<td>Cheyenne</td>
+				<td><img src="./images/wyoming.jpg" alt="Wyoming" style="width: 100%"></td>
+				<td><a href="./Yellowstone_park.html">Yellowstone National Park</a></td>
+				<td>Midwestern</td>
+			</tr>
 		</table>
+		<!-- PAGINATION BUTTONS -->
+		<div class="container" style="width: 10%; float: right; text-align: center;">
+			<a id="p1" style = "color: black">
+				<button id="c1" type="button" class="btn btn-default" style = "width:100%; ">Previous</button>
+			</a>
+    		<a id="p2" style = "color: black">
+    			<button id="c1" type="button" class="btn btn-default" style = "width:100%">Next</button>
+    		</a>
+		</div>
+		</div>
+
+		<script>
+<!--
+
+///////////////////////////INSTRUCTIONS/////////////////////////////
+/*
+ADD jQuery <SCRIPT> TO THE <head>. ADD <a id="p1">Previous</a> AND <a id="p2">Next</a> BEFORE <table>. THESE WILL BE YOUR BUTTONS TO SWITCH THROUGH TWO PAGES WITH THREE INSTANCES EACH. FOR EACH <tr> (THERE SHOULD BE 6 TOTAL), ADD IDs "r1" "r2" "r3" "r4" "r5" "r6" RESPECTIVELY. FOR EACH <th> (THERE SHOULD BE 6 TOTAL), ADD IDs "c1" "c2" "c3" "c4" "c5" "c6" RESPECTIVELY.
+*/
+
+$(document).ready(function(){
+
+	table = document.getElementById("table");
+	rows = table.getElementsByTagName("TR");
+
+	$("#"+rows[4].getAttribute('id')).hide();
+	$("#"+rows[5].getAttribute('id')).hide();
+	$("#"+rows[6].getAttribute('id')).hide();
+	$("#p1").hide();
+	var flag = true;
+	var c = 0;
+
+	var c1Sort = false;
+	var c2Sort = false;
+	var c3Sort = false;
+	var c4Sort = false;
+	var c5Sort = false;
+
+	$("#p1").click(function(){
+		$("#"+rows[4].getAttribute('id')).hide();
+		$("#"+rows[5].getAttribute('id')).hide();
+		$("#"+rows[6].getAttribute('id')).hide();
+		$("#"+rows[1].getAttribute('id')).show();
+		$("#"+rows[2].getAttribute('id')).show();
+		$("#"+rows[3].getAttribute('id')).show();
+		$("#p1").hide();
+		$("#p2").show();
+		flag = true;
+		c = 0;
+	});
+
+	$("#p2").click(function(){
+		$("#"+rows[4].getAttribute('id')).show();
+		$("#"+rows[5].getAttribute('id')).show();
+		$("#"+rows[6].getAttribute('id')).show();
+		$("#"+rows[1].getAttribute('id')).hide();
+		$("#"+rows[2].getAttribute('id')).hide();
+		$("#"+rows[3].getAttribute('id')).hide();
+		$("#p1").show();
+		$("#p2").hide();
+		flag = false;
+		c = 3;
+	});
+
+function showAll(flag){
+	for (var i=1; i<=6; i++){
+		$("#"+rows[i].getAttribute('id')).show();
+	}
+}
+
+function hide(rows,flag){
+	if (flag){
+		$("#"+rows[4].getAttribute('id')).hide();
+		$("#"+rows[5].getAttribute('id')).hide();
+		$("#"+rows[6].getAttribute('id')).hide();
+	}
+	else{
+		$("#"+rows[1].getAttribute('id')).hide();
+		$("#"+rows[2].getAttribute('id')).hide();
+		$("#"+rows[3].getAttribute('id')).hide();
+	}
+}
+
+
+	$("#c1").click(function(){
+		showAll(flag);
+		for (var a=1; a<10; a++){
+			for (var i=1; i<6; i++){
+				var x = rows[i].getElementsByTagName("TD")[0];
+				var y = rows[i+1].getElementsByTagName("TD")[0];
+				if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase() && !c1Sort){
+					rows[i].parentNode.insertBefore(rows[i+1], rows[i]);
+				}
+				if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase() && c1Sort){
+					rows[i].parentNode.insertBefore(rows[i+1], rows[i]);
+				}
+			}
+		}
+		c1Sort = !c1Sort;
+		hide(rows,flag);
+	});
+
+	$("#c2").click(function(){
+		showAll(flag);
+		for (var a=1; a<10; a++){
+			for (var i=1; i<6; i++){
+				var x = rows[i].getElementsByTagName("TD")[1];
+				var y = rows[i+1].getElementsByTagName("TD")[1];
+				if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase() && !c2Sort){
+					rows[i].parentNode.insertBefore(rows[i+1], rows[i]);
+				}
+				if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase() && c2Sort){
+					rows[i].parentNode.insertBefore(rows[i+1], rows[i]);
+				}
+			}
+		}
+		c2Sort = !c2Sort;
+		hide(rows,flag);
+	});
+
+	$("#c3").click(function(){
+		showAll(flag);
+		for (var a=1; a<10; a++){
+			for (var i=1; i<6; i++){
+				var x = rows[i].getElementsByTagName("TD")[2];
+				var y = rows[i+1].getElementsByTagName("TD")[2];
+				if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase() && !c3Sort){
+					rows[i].parentNode.insertBefore(rows[i+1], rows[i]);
+				}
+				if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase() && c3Sort){
+					rows[i].parentNode.insertBefore(rows[i+1], rows[i]);
+				}
+			}
+		}
+		c3Sort = !c3Sort;
+		hide(rows,flag);
+	});
+
+	$("#c4").click(function(){
+		showAll(flag);
+		for (var a=1; a<10; a++){
+			for (var i=1; i<6; i++){
+				var x = rows[i].getElementsByTagName("TD")[3];
+				var y = rows[i+1].getElementsByTagName("TD")[3];
+				if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase() && !c4Sort){
+					rows[i].parentNode.insertBefore(rows[i+1], rows[i]);
+				}
+				if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase() && c4Sort){
+					rows[i].parentNode.insertBefore(rows[i+1], rows[i]);
+				}
+			}
+		}
+		c4Sort = !c4Sort;
+		hide(rows,flag);
+	});
+
+	$("#c5").click(function(){
+		showAll(flag);
+		for (var a=1; a<10; a++){
+			for (var i=1; i<6; i++){
+				var x = rows[i].getElementsByTagName("TD")[4];
+				var y = rows[i+1].getElementsByTagName("TD")[4];
+				if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase() && !c5Sort){
+					rows[i].parentNode.insertBefore(rows[i+1], rows[i]);
+				}
+				if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase() && c5Sort){
+					rows[i].parentNode.insertBefore(rows[i+1], rows[i]);
+				}
+			}
+		}
+		c5Sort = !c5Sort;
+		hide(rows,flag);
+	});
+})
+// -->
+		</script>
 	</body>
 </html>
